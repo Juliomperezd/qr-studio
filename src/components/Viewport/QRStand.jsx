@@ -11,40 +11,6 @@ const BD = 0.55  // block depth/thickness
 const CW = 3.1   // inner card width
 const CH = 2.0   // inner card height
 
-// Corner bolt positions
-const BOLT_CORNERS = [
-  [-BW / 2 + 0.18,  BH / 2 - 0.18],
-  [ BW / 2 - 0.18,  BH / 2 - 0.18],
-  [-BW / 2 + 0.18, -BH / 2 + 0.18],
-  [ BW / 2 - 0.18, -BH / 2 + 0.18],
-]
-
-function CornerBolt({ x, y, z }) {
-  return (
-    <group position={[x, y, z]}>
-      {/* Bolt head */}
-      <mesh>
-        <cylinderGeometry args={[0.055, 0.055, 0.04, 16]} />
-        <meshPhysicalMaterial
-          color="#c4956a"
-          metalness={0.85}
-          roughness={0.15}
-          clearcoat={0.9}
-        />
-      </mesh>
-      {/* Bolt slot cross */}
-      <mesh rotation={[Math.PI / 2, 0, 0]} position={[0, 0, 0.001]}>
-        <boxGeometry args={[0.06, 0.008, 0.003]} />
-        <meshStandardMaterial color="#a07050" />
-      </mesh>
-      <mesh rotation={[Math.PI / 2, Math.PI / 2, 0]} position={[0, 0, 0.001]}>
-        <boxGeometry args={[0.06, 0.008, 0.003]} />
-        <meshStandardMaterial color="#a07050" />
-      </mesh>
-    </group>
-  )
-}
-
 export default function QRStand({ texture }) {
   const { roughness, clearcoat, iridescence, shimmerSweep } = useAppStore()
 
@@ -101,15 +67,6 @@ export default function QRStand({ texture }) {
         />
       </RoundedBox>
 
-      {/* ── Corner bolts on both faces ──────────────────────────────── */}
-      {BOLT_CORNERS.map(([x, y], i) => (
-        <React.Fragment key={i}>
-          {/* Front face bolt */}
-          <CornerBolt x={x} y={y} z={BD / 2 + 0.018} />
-          {/* Back face bolt */}
-          <CornerBolt x={x} y={y} z={-BD / 2 - 0.018} />
-        </React.Fragment>
-      ))}
     </group>
   )
 }
