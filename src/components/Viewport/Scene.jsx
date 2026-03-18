@@ -59,7 +59,7 @@ export default function Scene({ registerExport }) {
 
   return (
     <Canvas
-      camera={{ position: [0, 0.3, 5], fov: 40 }}
+      camera={{ position: [0, 0.5, 5.5], fov: 42 }}
       gl={{
         preserveDrawingBuffer: true,
         antialias: true,

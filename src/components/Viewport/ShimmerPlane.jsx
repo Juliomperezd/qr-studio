@@ -16,11 +16,11 @@ const fragmentShader = `
   void main() {
     float band = sin((vUv.x - vUv.y) * 4.0 - uTime * 1.5);
     float shimmer = smoothstep(0.92, 1.0, band);
-    gl_FragColor = vec4(1.0, 1.0, 1.0, shimmer * 0.25);
+    gl_FragColor = vec4(1.0, 1.0, 1.0, shimmer * 0.22);
   }
 `
 
-export default function ShimmerPlane() {
+export default function ShimmerPlane({ z = 0.052, w = 1.9, h = 1.9 }) {
   const meshRef = useRef()
   const uniforms = useMemo(() => ({ uTime: { value: 0 } }), [])
 
@@ -29,8 +29,8 @@ export default function ShimmerPlane() {
   })
 
   return (
-    <mesh ref={meshRef} position={[0, 0, 0.052]}>
-      <planeGeometry args={[2.0, 2.0]} />
+    <mesh ref={meshRef} position={[0, 0, z]} renderOrder={3}>
+      <planeGeometry args={[w, h]} />
       <shaderMaterial
         vertexShader={vertexShader}
         fragmentShader={fragmentShader}

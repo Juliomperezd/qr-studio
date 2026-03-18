@@ -4,12 +4,12 @@ import * as THREE from 'three'
 import useAppStore from '../../store/useAppStore.js'
 
 const PRESETS = {
-  hero:     { position: new THREE.Vector3(0, 0.3, 5),    target: new THREE.Vector3(0, 0, 0),     fov: 40 },
-  float:    { position: new THREE.Vector3(0.8, 1.2, 4),  target: new THREE.Vector3(0, 0.1, 0),   fov: 38 },
-  portrait: { position: new THREE.Vector3(0, 0, 4.5),    target: new THREE.Vector3(0, 0, 0),     fov: 35 },
-  drama:    { position: new THREE.Vector3(-2, -0.5, 3),  target: new THREE.Vector3(0.2, 0, 0),   fov: 45 },
-  overhead: { position: new THREE.Vector3(0, 5, 1),      target: new THREE.Vector3(0, 0, 0),     fov: 50 },
-  stack:    { position: new THREE.Vector3(1.5, 1.5, 3),  target: new THREE.Vector3(-0.2, 0, 0),  fov: 42 },
+  hero:     { position: new THREE.Vector3(0, 0.5, 5.5),   target: new THREE.Vector3(0, 0, 0),     fov: 42 },
+  float:    { position: new THREE.Vector3(1.2, 1.5, 5),   target: new THREE.Vector3(0, 0.1, 0),   fov: 40 },
+  portrait: { position: new THREE.Vector3(0, 0, 5.5),     target: new THREE.Vector3(0, 0, 0),     fov: 38 },
+  drama:    { position: new THREE.Vector3(-2.5, -0.8, 4), target: new THREE.Vector3(0.3, 0, 0),   fov: 48 },
+  overhead: { position: new THREE.Vector3(0, 5.5, 1.5),   target: new THREE.Vector3(0, 0, 0),     fov: 52 },
+  stack:    { position: new THREE.Vector3(2, 2, 4),       target: new THREE.Vector3(-0.3, 0, 0),  fov: 44 },
 }
 
 export default function CameraRig({ controlsRef }) {
