@@ -1,0 +1,31 @@
+.viewport {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-app);
+  overflow: hidden;
+}
+
+.viewport-canvas {
+  flex: 1;
+  position: relative;
+}
+
+.viewport-canvas canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.viewport-hint {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  pointer-events: none;
+  white-space: nowrap;
+}

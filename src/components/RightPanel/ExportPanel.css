@@ -1,0 +1,30 @@
+.resolution-row {
+  display: flex;
+  gap: 4px;
+  background: var(--bg-input);
+  padding: 2px;
+  border-radius: var(--radius-sm);
+}
+
+.res-btn {
+  flex: 1;
+  padding: 5px 4px;
+  background: transparent;
+  border: none;
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition);
+  letter-spacing: 0.04em;
+}
+
+.res-btn:hover {
+  color: var(--text-primary);
+}
+
+.res-btn.active {
+  background: var(--bg-surface);
+  color: var(--text-primary);
+}

@@ -1,0 +1,52 @@
+.joystick-section {
+  margin-top: 12px;
+}
+
+.joystick-track {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  cursor: crosshair;
+  overflow: hidden;
+  user-select: none;
+}
+
+.joystick-dot {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: var(--accent);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 8px var(--accent-glow);
+  pointer-events: none;
+  transition: box-shadow var(--transition);
+}
+
+.joystick-track:active .joystick-dot {
+  box-shadow: 0 0 16px var(--accent);
+}
+
+.joystick-guide-h,
+.joystick-guide-v {
+  position: absolute;
+  background: var(--border-subtle);
+  pointer-events: none;
+}
+
+.joystick-guide-h {
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+}
+
+.joystick-guide-v {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+}
